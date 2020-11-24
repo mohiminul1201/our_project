@@ -16,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/users', function () {
+    return view('auth.login');
+});
+
+
+
+
 Route::get('/user', function () {
     return view('website.pages.index');
 });
@@ -39,3 +47,6 @@ Route::post('Customer_add','StoreController@add');
 
 
 Route::get('store/supplier', 'StoreController@supplier');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

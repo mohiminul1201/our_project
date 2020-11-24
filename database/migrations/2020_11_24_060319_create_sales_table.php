@@ -14,16 +14,26 @@ class CreateSalesTable extends Migration
     public function up()
     {
         Schema::create('sales', function (Blueprint $table) {
-           $table->unsignedBigInteger('product_code');
-              $table->foreign('product_code')->references('product_code')->on('inventoris');
+            $table->unsignedBigInteger('product_code');
+
+            $table->foreign('product_code')->references('product_code')->on('inventoris');
                   
+
             $table->unsignedBigInteger('invoice_no');
+
             $table->foreign('invoice_no')->references('invoice_no')->on('purchases');
-                    
+
             $table->unsignedBigInteger('suppliers');
-            $table->unsignedBigInteger('cus_id');
-            $table->foreign('cus_id')->references('cus_id')->on('customerinfos');
-                  
+
+            $table->foreign('suppliers')->references('secrial_number')->on('supplier');
+
+           
+            $table->unsignedBigInteger('Customer');
+
+            $table->foreign('Customer')->references('cus_id')->on('customerinfos');
+
+
+
             $table->string('Product_description');
             $table->string('quantity');
             $table->string('rate');
