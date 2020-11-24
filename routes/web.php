@@ -19,18 +19,23 @@ Route::get('/', function () {
 Route::get('/user', function () {
     return view('website.pages.index');
 });
-Route::get('/purchase', function () {
-    return view('website.pages.purchase');
-});
-Route::get('/sales', function () {
-    return view('website.pages.sales');
-});
-Route::get('/inventory', function () {
-    return view('website.pages.inventory');
-});
-Route::get('/customer', function () {
-    return view('website.pages.customer');
-});
-Route::get('/supplier', function () {
-    return view('website.pages.supplier');
-});
+Route::get('/purchase', 'InventoryController@purchase');
+Route::get('/sales', 'InventoryController@sales');
+Route::get('/inventory', 'InventoryController@inventory'
+);
+Route::get('/customer','InventoryController@customer');
+
+Route::get('/supplier', 'InventoryController@supplier');
+
+
+			// store
+Route::get('store/purchase','StoreController@purchase' );
+Route::get('store/sales', 'StoreController@sales');
+Route::get('store/inventory', 'StoreController@inventory');
+
+
+Route::get('store/customer','StoreController@customer');
+Route::post('Customer_add','StoreController@add');
+
+
+Route::get('store/supplier', 'StoreController@supplier');

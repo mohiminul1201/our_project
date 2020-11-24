@@ -13,7 +13,7 @@
 </div>
 <!------ Include the above in your HEAD tag ---------->
 
-<section class="get-in-touch">
+<!-- <section class="get-in-touch">
    <h1 class="title">SUPPLIER</h1>
    <p class="text-center text-danger font-weight-bold">Supplier Summary</p>
    <form class="contact-form row" action="index" method="POST">
@@ -47,8 +47,28 @@
          <input class="submit-btn" type="submit" value="Submit">
       </div>
    </form>
-</section>
+</section> -->
 
-
+<table class="table">
+  <thead class="black white-text">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Secrial number</th>
+      <th scope="col">Supplier</th>
+      <th scope="col">Opening Balance</th>
+      <th scope="col">Purchase</th>
+      <th scope="col">payment</th>
+      <th scope="col">Closing Balance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
 
 @stop
